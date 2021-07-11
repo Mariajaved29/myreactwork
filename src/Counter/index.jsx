@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import input from '../Component/input';
+
 
 const CounterComponent = (props) => {
   return (
@@ -31,8 +33,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increment: () => {
-      dispatch({ type: "INCREMENT" });
+    increment: (value) => {
+      dispatch({ 
+        type: "INCREMENT",
+        payload: {
+          incrementBy: value,
+        }
+    
+    });
+
     },
     decrement: () => {
       dispatch({ type: "DECREMENT" });
