@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Provider } from "react-redux";
+import CounterComponent from "./Counter";
+import { store } from "./Store/store";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <CounterComponent />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
